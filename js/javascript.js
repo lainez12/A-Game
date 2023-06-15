@@ -1,4 +1,5 @@
 let ataqueJugador
+let ataqueRival
 
 function iniciarjuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -46,17 +47,38 @@ function mascotaEnemigo()
 
 function ataqueFuego() {
     ataqueJugador = 'Fuego'
-    alert('ataqueJugador')
+    alert('Selecionaste '+ ataqueJugador)
+
+    ataqueEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = 'Agua'
-    alert('ataqueJugador')
+    alert('Selecionaste '+ ataqueJugador)
+
+    ataqueEnemigo()
 }
 
 function ataqueTierra() {
     ataqueJugador = 'Tierra'
-    alert('ataqueJugador')
+    alert('Selecionaste '+ ataqueJugador)
+
+    ataqueEnemigo()
+}
+
+function ataqueEnemigo() {
+    let ataqueAleatorio = aletorio(1,3)
+
+    if (ataqueAleatorio == 1) {
+        ataqueRival = 'Fuego'
+        alert('El enemigo seleciono ' + ataqueRival)
+    } else if (ataqueAleatorio == 2) {
+        ataqueRival = 'Agua'
+        alert('El enemigo seleciono ' + ataqueRival)
+    } else if (ataqueAleatorio == 3) {
+        ataqueRival = 'Tierra'
+        alert('El enemigo seleciono ' + ataqueRival)
+    }
 }
 
 function aletorio(min, max) {
