@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueRival
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarjuego() {
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -27,7 +29,7 @@ function selecionMascota() {
     } else if (ratigueya.checked == true) {
         mascotaSelecionada.innerHTML = 'Ratigueya'
     } else {
-        alert("No selecionaste nada, selecion tu mascota")
+        alert("No selecionaste nada, seleciona tu mascota")
     }
 
     mascotaEnemigo()
@@ -38,31 +40,25 @@ function mascotaEnemigo()
     let mascotaAleatoria = aletorio(1,3)
     let mascotaEnemigo = document.getElementById('mascota-enemigo')
     if (mascotaAleatoria == 1) {
-        mascotaEnemigo.innerHTML = 'Hipodege'
+        mascotaEnemigo.innerHTML = 'EL Hipodege'
     } else if (mascotaAleatoria == 2) {
-        mascotaEnemigo.innerHTML = 'Capipepo'
+        mascotaEnemigo.innerHTML = 'EL Capipepo'
     } else if (mascotaAleatoria == 3) {
-        mascotaEnemigo.innerHTML = 'Ratigueya' }
+        mascotaEnemigo.innerHTML = 'La Ratigueya' }
 }
 
 function ataqueFuego() {
     ataqueJugador = 'Fuego'
-    alert('Selecionaste '+ ataqueJugador)
-
     ataqueEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = 'Agua'
-    alert('Selecionaste '+ ataqueJugador)
-
     ataqueEnemigo()
 }
 
 function ataqueTierra() {
     ataqueJugador = 'Tierra'
-    alert('Selecionaste '+ ataqueJugador)
-
     ataqueEnemigo()
 }
 
@@ -71,14 +67,38 @@ function ataqueEnemigo() {
 
     if (ataqueAleatorio == 1) {
         ataqueRival = 'Fuego'
-        alert('El enemigo seleciono ' + ataqueRival)
     } else if (ataqueAleatorio == 2) {
         ataqueRival = 'Agua'
-        alert('El enemigo seleciono ' + ataqueRival)
     } else if (ataqueAleatorio == 3) {
         ataqueRival = 'Tierra'
-        alert('El enemigo seleciono ' + ataqueRival)
     }
+
+    combate(ataqueJugador, ataqueRival)
+}
+
+function combate(jugador, pc) {
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+    
+    if (jugador == pc) {
+        mensajeJuego('Empate')    
+    } else if (jugador == 'Agua' && pc == 'Fuego' || jugador == 'Tierra' && pc == 'Agua' || jugador == 'Fuego' && pc == 'Tierra') {
+        mensajeJuego('Ganaste')
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
+    } else {
+        mensajeJuego('Perdiste')
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+}
+
+function mensajeJuego(resultado) {
+    let contenedorMensaje = document.createElement('p')
+    let mensaje = document.createTextNode('Tu escogieste atacar con ' + ataqueJugador + ' y el enemigo ataco con ' + ataqueRival + ' ' + resultado)
+    contenedorMensaje.appendChild(mensaje)
+    let ubicacionMensaje = document.getElementById('mensajes')
+    ubicacionMensaje.appendChild(contenedorMensaje)
 }
 
 function aletorio(min, max) {
