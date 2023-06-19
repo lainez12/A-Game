@@ -16,11 +16,23 @@ function iniciarjuego() {
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
 
+    let ocultarAtaque = document.getElementById('selecionar-ataque')
+    ocultarAtaque.style.display = 'none'
+
+    let ocultarReinicio = document.getElementById('reinicio')
+    ocultarReinicio.style.display = 'none'
+
     let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function selecionMascota() {
+    let ocultarMascota = document.getElementById('selecionar-mascota')
+    ocultarMascota.style.display = 'none'
+
+    let ocultarAtaque = document.getElementById('selecionar-ataque')
+    ocultarAtaque.style.display = 'block'
+
     let hipodege = document.getElementById('hipodege')
     let capipepo = document.getElementById('capipepo')
     let ratigueya = document.getElementById('ratigueya')
@@ -86,11 +98,11 @@ function combate(jugador, pc) {
     if (jugador == pc) {
         mensajeJuego('Empate')    
     } else if (jugador == 'Agua' && pc == 'Fuego' || jugador == 'Tierra' && pc == 'Agua' || jugador == 'Fuego' && pc == 'Tierra') {
-        mensajeJuego('Ganaste')
+        mensajeJuego('Ganaste, pero no el amor de ella.')
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
-        mensajeJuego('Perdiste')
+        mensajeJuego('Perdiste que verguenza das.')
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
@@ -101,8 +113,12 @@ function combate(jugador, pc) {
 function revisarVidas() {
     if (vidasEnemigo == 0) {
         mensajeFinal('Deberias sentirte mal mataste una mascota virtual')
+        let ocultarReinicio = document.getElementById('reinicio')
+        ocultarReinicio.style.display = 'block'
     } else if (vidasJugador == 0) {
         mensajeFinal('Deberias sentirte mal una pc te gano')
+        let ocultarReinicio = document.getElementById('reinicio')
+        ocultarReinicio.style.display = 'block'
     } else {
 
     }
