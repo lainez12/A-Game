@@ -15,6 +15,9 @@ function iniciarjuego() {
     
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
+
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function selecionMascota() {
@@ -91,6 +94,18 @@ function combate(jugador, pc) {
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
+
+    revisarVidas()
+}
+
+function revisarVidas() {
+    if (vidasEnemigo == 0) {
+        mensajeFinal('Deberias sentirte mal mataste una mascota virtual')
+    } else if (vidasJugador == 0) {
+        mensajeFinal('Deberias sentirte mal una pc te gano')
+    } else {
+
+    }
 }
 
 function mensajeJuego(resultado) {
@@ -99,6 +114,24 @@ function mensajeJuego(resultado) {
     contenedorMensaje.appendChild(mensaje)
     let ubicacionMensaje = document.getElementById('mensajes')
     ubicacionMensaje.appendChild(contenedorMensaje)
+}
+
+function mensajeFinal(mensaje) {
+    let contenedorMensaje = document.createElement('p')
+    let mensajefinal = document.createTextNode(mensaje)
+    contenedorMensaje.appendChild(mensajefinal)
+    let ubicacionMensaje = document.getElementById('mensajes')
+    ubicacionMensaje.appendChild(contenedorMensaje)
+    let botonFuego = document.getElementById('boton-fuego')
+    let botonAgua = document.getElementById('boton-agua')
+    let botonTierra = document.getElementById('boton-tierra')
+    botonFuego.disabled = true
+    botonAgua.disabled = true
+    botonTierra.disabled = true
+}
+
+function reiniciarJuego() {
+    location.reload()
 }
 
 function aletorio(min, max) {
