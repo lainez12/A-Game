@@ -100,11 +100,11 @@ function combate(jugador, pc) {
     } else if (jugador == 'Agua' && pc == 'Fuego' || jugador == 'Tierra' && pc == 'Agua' || jugador == 'Fuego' && pc == 'Tierra') {
         mensajeJuego('Ganaste, pero no el amor de ella.')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = vidasEnemigo + corazonesVidas(vidasEnemigo)
     } else {
         mensajeJuego('Perdiste que verguenza das.')
         vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
+        spanVidasJugador.innerHTML = vidasJugador + corazonesVidas(vidasJugador)
     }
 
     revisarVidas()
@@ -148,6 +148,22 @@ function mensajeFinal(mensaje) {
 
 function reiniciarJuego() {
     location.reload()
+}
+
+function corazonesVidas(nCorazones) {
+    let corazones
+
+    if (nCorazones == 1) {
+        corazones = '❤️'
+    } else if(nCorazones == 2) {
+        corazones = '❤️❤️'
+    }    else if(nCorazones == 3){
+        corazones = '❤️❤️❤️'
+    } else {
+        corazones = ''
+    }
+
+    return corazones
 }
 
 function aletorio(min, max) {

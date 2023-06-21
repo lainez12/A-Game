@@ -26,6 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     background-color: #25cbaad6;
     margin-top: 20px;
     border-radius: 20px;
@@ -34,4 +35,22 @@ body {
     border: 1px solid white;
     box-shadow: 0px 0px 30px 1px rgb(88 16 229 / 42%);
     color: white;
+    font-family: monospace;
+}
+
+#boton-mascota {
+    width: 40%;
+    height: 45px;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgb(98, 235, 0);
+    color: white;
+}
+
+#selecionar-mascota .mascota:hover,
+.mascota label:hover,
+button:hover {
+    cursor: pointer;
 }
