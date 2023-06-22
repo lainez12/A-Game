@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de papel piedra y tijera!!</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/stylespc.css">
+    <link rel="stylesheet" href="./css/styles.css" media="screen and (max-width: 600px)">
     <script src="./js/javascript.js"></script>
 </head>
 <body>
@@ -13,16 +14,31 @@
     <section id="selecionar-mascota">
         <h2>Elige tu animal:</h2>
             <div class="mascota">
-                    <label for="hipodege">Hipodege</label>
+                <label for="hipodege" class="miAnimal">
+                    <figure class="mascotaImg">
+                        <img src="https://simp6.jpg.church/images/Criatura1ef2057ad22a11bf7.png" alt="Hipodoge">
+                    </figure>
+                    Hipodoge
                     <input type="radio" name="mascota" id="hipodege">
+                </label>
             </div>
             <div class="mascota">
-                    <label for="capipepo">Capipepo</label>
+                <label for="capipepo" class="miAnimal">
+                    <figure class="mascotaImg">
+                        <img src="https://simp6.jpg.church/images/Criatura2b21aadb89e39dc36.png" alt="Capipepo">
+                    </figure>
+                    Capipepo
                     <input type="radio" name="mascota" id="capipepo">
+                </label>
             </div>
             <div class="mascota">
-                    <label for="ratigueya">Ratigueya</label>
+                <label for="ratigueya" class="miAnimal">
+                    <figure class="mascotaImg">
+                        <img src="https://simp6.jpg.church/images/Criatura38867b5557f90ae32.png" alt="Ratigueya">
+                    </figure>
+                    Ratigueya
                     <input type="radio" name="mascota" id="ratigueya">
+                </label>
             </div>
         <!-- <input type="radio" name="mascota" id=""> -->
         <button id="boton-mascota">Elegir</button>
@@ -32,9 +48,9 @@
         <p><span id="mascota-enemigo">La mascota</span> del enemigo tiene <span id="vidas-enemigo">3 ❤️❤️❤️</span> vidas</p>
 
         <p>
-            <button id="boton-fuego">Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-tierra">Tierra 🌱</button>
+            <button id="boton-fuego">Batazo 🪓️</button>
+            <button id="boton-agua">Escobazo 🧹️</button>
+            <button id="boton-tierra">Covid 🦠️</button>
         </p>
     </section>
     <section id="mensajes">

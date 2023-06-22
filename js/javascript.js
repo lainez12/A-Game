@@ -38,7 +38,7 @@ function selecionMascota() {
     let ratigueya = document.getElementById('ratigueya')
     let mascotaSelecionada = document.getElementById('mascota-selecionada')
     if (hipodege.checked == true) {
-        mascotaSelecionada.innerHTML = 'Hipodege'
+        mascotaSelecionada.innerHTML = 'Hipodoge'
     } else if (capipepo.checked == true) {
         mascotaSelecionada.innerHTML = 'Capipepo'
     } else if (ratigueya.checked == true) {
@@ -63,17 +63,17 @@ function mascotaEnemigo()
 }
 
 function ataqueFuego() {
-    ataqueJugador = 'Fuego'
+    ataqueJugador = 'Batazo'
     ataqueEnemigo()
 }
 
 function ataqueAgua() {
-    ataqueJugador = 'Agua'
+    ataqueJugador = 'Escobazo'
     ataqueEnemigo()
 }
 
 function ataqueTierra() {
-    ataqueJugador = 'Tierra'
+    ataqueJugador = 'Covid'
     ataqueEnemigo()
 }
 
@@ -81,11 +81,11 @@ function ataqueEnemigo() {
     let ataqueAleatorio = aletorio(1,3)
 
     if (ataqueAleatorio == 1) {
-        ataqueRival = 'Fuego'
+        ataqueRival = 'Batazo'
     } else if (ataqueAleatorio == 2) {
-        ataqueRival = 'Agua'
+        ataqueRival = 'Escobazo'
     } else if (ataqueAleatorio == 3) {
-        ataqueRival = 'Tierra'
+        ataqueRival = 'Covid'
     }
 
     combate(ataqueJugador, ataqueRival)
@@ -97,7 +97,7 @@ function combate(jugador, pc) {
     
     if (jugador == pc) {
         mensajeJuego('Empate')    
-    } else if (jugador == 'Agua' && pc == 'Fuego' || jugador == 'Tierra' && pc == 'Agua' || jugador == 'Fuego' && pc == 'Tierra') {
+    } else if (jugador == 'Escobazo' && pc == 'Batazo' || jugador == 'Covid' && pc == 'Escobazo' || jugador == 'Batazo' && pc == 'Covid') {
         mensajeJuego('Ganaste, pero no el amor de ella.')
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo + corazonesVidas(vidasEnemigo)
@@ -170,4 +170,24 @@ function aletorio(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min)
 }
 
+function funcionesExtas() {
+    var radios = document.querySelectorAll('.miAnimal');
+
+radios.forEach(function(radio) {
+  var input = radio.querySelector('input[type="radio"]');
+  
+  input.addEventListener('change', function() {
+    radios.forEach(function(radio) {
+      radio.classList.remove('seleccionado');
+    });
+    
+    if (input.checked) {
+      radio.classList.add('seleccionado');
+    }
+  });
+});
+
+}
+
 window.addEventListener('load', iniciarjuego)
+window.addEventListener('load', funcionesExtas)
