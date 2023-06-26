@@ -27,27 +27,39 @@ function iniciarjuego() {
 }
 
 function selecionMascota() {
-    let ocultarMascota = document.getElementById('selecionar-mascota')
-    ocultarMascota.style.display = 'none'
-
-    let ocultarAtaque = document.getElementById('selecionar-ataque')
-    ocultarAtaque.style.display = 'block'
-
     let hipodege = document.getElementById('hipodege')
     let capipepo = document.getElementById('capipepo')
     let ratigueya = document.getElementById('ratigueya')
     let mascotaSelecionada = document.getElementById('mascota-selecionada')
     if (hipodege.checked == true) {
+        let ocultarMascota = document.getElementById('selecionar-mascota')
+        ocultarMascota.style.display = 'none'
+
+        let ocultarAtaque = document.getElementById('selecionar-ataque')
+        ocultarAtaque.style.display = 'block'
+        
         mascotaSelecionada.innerHTML = 'Hipodoge'
+        mascotaEnemigo()
     } else if (capipepo.checked == true) {
+        let ocultarMascota = document.getElementById('selecionar-mascota')
+        ocultarMascota.style.display = 'none'
+
+        let ocultarAtaque = document.getElementById('selecionar-ataque')
+        ocultarAtaque.style.display = 'block'
+        
         mascotaSelecionada.innerHTML = 'Capipepo'
+        mascotaEnemigo()
     } else if (ratigueya.checked == true) {
+        let ocultarMascota = document.getElementById('selecionar-mascota')
+        ocultarMascota.style.display = 'none'
+
+        let ocultarAtaque = document.getElementById('selecionar-ataque')
+        ocultarAtaque.style.display = 'block'
         mascotaSelecionada.innerHTML = 'Ratigueya'
+        mascotaEnemigo()
     } else {
         alert("No selecionaste nada, seleciona tu mascota")
     }
-
-    mascotaEnemigo()
 }
 
 function mascotaEnemigo() 
