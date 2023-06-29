@@ -44,23 +44,38 @@
         <button id="boton-mascota">Elegir</button>
     </section>
     <section id="selecionar-ataque">
-        <h2>Seleciona tu ataque</h2>
-        <div id="botones-ataques">
-            <button id="boton-fuego" class="botonesAtaque">Batazo 🪓️</button>
-            <button id="boton-agua" class="botonesAtaque">Escobazo 🧹️</button>
-            <button id="boton-tierra" class="botonesAtaque">Covid 🦠️</button>
+        
+        <div class="mensajeFinal">
+            <p id="ganadorMensaje"></p>
+            <section id="reinicio">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
         </div>
-        <!-- <section id="mensajes">
-        </section> -->
 
-        <div id="resultados"></div>
-        <div id=""></div>
-        <div id=""></div>
-        <section id="reinicio">
-            <button id="boton-reiniciar">Reiniciar</button>
-        </section>
-        <p>Tu <span id="mascota-selecionada">mascota</span> tiene <span id="vidas-jugador">3 ❤️❤️❤️</span> vidas</p>
-        <p><span id="mascota-enemigo">La mascota</span> del enemigo tiene <span id="vidas-enemigo">3 ❤️❤️❤️</span> vidas</p>
+        <div id="campoBatalla">
+            <div id="tu">
+                <img id="imgAnimal" alt="animalSelecionado">
+                <span id="mascota-selecionada">mascota</span>
+                <span id="vidas-jugador">3 ❤️❤️❤️</span>
+                <p id="name-Ataque-Jugador"></p>
+                <p id="consejoJugador">Escoge sabiamente</p>
+            </div>
+            <div id="enemigo">
+                <img id="imgEnemigo" alt="animalEnemigo">
+                <span id="mascota-enemigo">La mascota</span>
+                <span id="vidas-enemigo">3 ❤️❤️❤️</span>
+                <p id="name-Ataque-Enemigo"></p>
+                <p id="resultados">Sin resultado aun</p>
+            </div>
+        </div>
+        <div id="sectionAtaque">
+            <h2>Seleciona tu ataque</h2>
+            <div id="botones-ataques">
+                <button id="boton-fuego" class="botonesAtaque">Batazo 🪓️</button>
+                <button id="boton-agua" class="botonesAtaque">Escobazo 🧹️</button>
+                <button id="boton-tierra" class="botonesAtaque">Covid 🦠️</button>
+            </div>
+        </div>
     </section>
 </body>
 </html>

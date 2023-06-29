@@ -31,6 +31,7 @@ function selecionMascota() {
     let capipepo = document.getElementById('capipepo')
     let ratigueya = document.getElementById('ratigueya')
     let mascotaSelecionada = document.getElementById('mascota-selecionada')
+    let imagenMascota = document.getElementById('imgAnimal')
     if (hipodege.checked == true) {
         let ocultarMascota = document.getElementById('selecionar-mascota')
         ocultarMascota.style.display = 'none'
@@ -39,6 +40,7 @@ function selecionMascota() {
         ocultarAtaque.style.display = 'block'
         
         mascotaSelecionada.innerHTML = 'Hipodoge'
+        imagenMascota.setAttribute("src", "https://simp6.jpg.church/images/Criatura1ef2057ad22a11bf7.png");
         mascotaEnemigo()
     } else if (capipepo.checked == true) {
         let ocultarMascota = document.getElementById('selecionar-mascota')
@@ -48,6 +50,7 @@ function selecionMascota() {
         ocultarAtaque.style.display = 'block'
         
         mascotaSelecionada.innerHTML = 'Capipepo'
+        imagenMascota.setAttribute("src", "https://simp6.jpg.church/images/Criatura2b21aadb89e39dc36.png");
         mascotaEnemigo()
     } else if (ratigueya.checked == true) {
         let ocultarMascota = document.getElementById('selecionar-mascota')
@@ -56,6 +59,7 @@ function selecionMascota() {
         let ocultarAtaque = document.getElementById('selecionar-ataque')
         ocultarAtaque.style.display = 'block'
         mascotaSelecionada.innerHTML = 'Ratigueya'
+        imagenMascota.setAttribute("src", "https://simp6.jpg.church/images/Criatura38867b5557f90ae32.png")
         mascotaEnemigo()
     } else {
         alert("No selecionaste nada, seleciona tu mascota")
@@ -66,12 +70,16 @@ function mascotaEnemigo()
 {
     let mascotaAleatoria = aletorio(1,3)
     let mascotaEnemigo = document.getElementById('mascota-enemigo')
+    let imagenMascota = document.getElementById('imgEnemigo')
     if (mascotaAleatoria == 1) {
         mascotaEnemigo.innerHTML = 'EL Hipodege'
+        imagenMascota.setAttribute("src", "https://simp6.jpg.church/images/Criatura1ef2057ad22a11bf7.png");
     } else if (mascotaAleatoria == 2) {
         mascotaEnemigo.innerHTML = 'EL Capipepo'
+        imagenMascota.setAttribute("src", "https://simp6.jpg.church/images/Criatura2b21aadb89e39dc36.png");
     } else if (mascotaAleatoria == 3) {
-        mascotaEnemigo.innerHTML = 'La Ratigueya' }
+        mascotaEnemigo.innerHTML = 'La Ratigueya'
+        imagenMascota.setAttribute("src", "https://simp6.jpg.church/images/Criatura38867b5557f90ae32.png") }
 }
 
 function ataqueFuego() {
@@ -137,19 +145,21 @@ function revisarVidas() {
 }
 
 function mensajeJuego(resultado) {
-    let contenedorMensaje = document.createElement('p')
-    let mensaje = document.createTextNode('Tu escogieste atacar con ' + ataqueJugador + ' y el enemigo ataco con ' + ataqueRival + ' ' + resultado)
-    contenedorMensaje.appendChild(mensaje)
-    let ubicacionMensaje = document.getElementById('mensajes')
-    ubicacionMensaje.appendChild(contenedorMensaje)
+    let resultadoBatalla = document.getElementById('resultados')
+    let tuAtaque = document.getElementById('name-Ataque-Jugador')
+    let elAtaqueEnemigo = document.getElementById('name-Ataque-Enemigo')
+    resultadoBatalla.innerHTML = resultado
+    tuAtaque.innerHTML = ataqueJugador
+    elAtaqueEnemigo.innerHTML = ataqueRival
 }
 
 function mensajeFinal(mensaje) {
-    let contenedorMensaje = document.createElement('p')
-    let mensajefinal = document.createTextNode(mensaje)
-    contenedorMensaje.appendChild(mensajefinal)
-    let ubicacionMensaje = document.getElementById('mensajes')
-    ubicacionMensaje.appendChild(contenedorMensaje)
+    let resultadoBatalla = document.getElementById('ganadorMensaje')
+    let tuAtaque = document.getElementById('name-Ataque-Jugador')
+    let elAtaqueEnemigo = document.getElementById('name-Ataque-Enemigo')
+    resultadoBatalla.innerHTML = mensaje
+    tuAtaque.innerHTML = ' '
+    elAtaqueEnemigo.innerHTML = ' '
     let botonFuego = document.getElementById('boton-fuego')
     let botonAgua = document.getElementById('boton-agua')
     let botonTierra = document.getElementById('boton-tierra')
