@@ -55,6 +55,12 @@ body {
     justify-self: center;
 }
 
+#lasMascotas {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: space-around;
+}
+
 #selecionar-mascota .mascota:first-child {
     grid-column: 1/2;
 }

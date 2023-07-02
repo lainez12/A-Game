@@ -1,35 +1,89 @@
-let botonMascotaJugador = document.getElementById('boton-mascota')
-let botonFuego = document.getElementById('boton-fuego')
-let botonAgua = document.getElementById('boton-agua')
-let botonTierra = document.getElementById('boton-tierra')
-let ocultarAtaque = document.getElementById('selecionar-ataque')
-let ocultarReinicio = document.getElementById('reinicio')
-let botonReiniciar = document.getElementById('boton-reiniciar')
+const botonMascotaJugador = document.getElementById('boton-mascota')
+const botonFuego = document.getElementById('boton-fuego')
+const botonAgua = document.getElementById('boton-agua')
+const botonTierra = document.getElementById('boton-tierra')
+const ocultarAtaque = document.getElementById('selecionar-ataque')
+const ocultarReinicio = document.getElementById('reinicio')
+const botonReiniciar = document.getElementById('boton-reiniciar')
 
-let hipodege = document.getElementById('hipodege')
-let capipepo = document.getElementById('capipepo')
-let ratigueya = document.getElementById('ratigueya')
-let mascotaSelecionada = document.getElementById('mascota-selecionada')
-let imagenMascota = document.getElementById('imgAnimal')
+const hipodoge = document.getElementById('hipodoge')
+const capipepo = document.getElementById('capipepo')
+const ratigueya = document.getElementById('ratigueya')
+const mascotaSelecionada = document.getElementById('mascota-selecionada')
+const imagenMascota = document.getElementById('imgAnimal')
 
-let ocultarMascota = document.getElementById('selecionar-mascota')
+const ocultarMascota = document.getElementById('selecionar-mascota')
 
-let mascotaEnemigo = document.getElementById('mascota-enemigo')
-let imagenMascotaJugador = document.getElementById('imgEnemigo')
+const mascotaEnemigo = document.getElementById('mascota-enemigo')
+const imagenMascotaJugador = document.getElementById('imgEnemigo')
 
-let spanVidasJugador = document.getElementById('vidas-jugador')
-let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+const spanVidasJugador = document.getElementById('vidas-jugador')
+const spanVidasEnemigo = document.getElementById('vidas-enemigo')
+const resultadoBatalla = document.getElementById('resultados')
+const tuAtaque = document.getElementById('name-Ataque-Jugador')
+const elAtaqueEnemigo = document.getElementById('name-Ataque-Enemigo')
 
-let resultadoBatalla = document.getElementById('resultados')
-let tuAtaque = document.getElementById('name-Ataque-Jugador')
-let elAtaqueEnemigo = document.getElementById('name-Ataque-Enemigo')
+const lasMascotas = document.getElementById('lasMascotas')
 
 let ataqueJugador
 let ataqueRival
+let cadaAnimal
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+class Animal {
+    constructor(nombre, foto, vida) {
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+        this.ataques = []
+    }
+}
+
+let hipodogeObjeto = new Animal('Hipodoge', 'https://simp6.jpg.church/images/Criatura1ef2057ad22a11bf7.png', '3')
+let capipepoObjeto = new Animal('Capipepo', 'https://simp6.jpg.church/images/Criatura2b21aadb89e39dc36.png', '3')
+let ratigueyaObjeto = new Animal('Ratigueya', 'https://simp6.jpg.church/images/Criatura38867b5557f90ae32.png', '3')
+
+hipodogeObjeto.ataques.push(
+    {nombre: '🪓️', id: 'boton-hachazo'},
+    {nombre: '🏏️', id: 'boton-batazo'},
+    {nombre: '🪨️', id: 'boton-piedra'}
+)
+
+capipepoObjeto.ataques.push(
+    {nombre: '🧹️', id: 'boton-escobazo'},
+    {nombre: '🪰️', id: 'boton-mosca'},
+    {nombre: '👅️', id: 'boton-lengua'}
+)
+
+ratigueyaObjeto.ataques.push(
+    {nombre: '🦠️', id: 'boton-virus'},
+    {nombre: '🕸️', id: 'boton-telarana'},
+    {nombre: '🦷️', id: 'boton-mordida'}
+)
+
+let animales = []
+animales.push(hipodogeObjeto,capipepoObjeto,ratigueyaObjeto)
+
 function iniciarjuego() {
+
+    animales.forEach((animal) => {
+        cadaAnimal = `
+        <div class="mascota">
+                <label for=${animal.nombre} class="miAnimal">
+                    <figure class="mascotaImg">
+                        <img src=${animal.foto} alt=${animal.nombre}>
+                    </figure>
+                    ${animal.nombre}
+                    <input type="radio" name="mascota" id=${animal.nombre}>
+                </label>
+        </div>
+        `
+        lasMascotas.innerHTML += cadaAnimal
+    })
+
+    
+
     botonMascotaJugador.addEventListener('click', selecionMascota)
 
     botonFuego.addEventListener('click', ataqueFuego)
@@ -37,7 +91,7 @@ function iniciarjuego() {
     botonAgua.addEventListener('click', ataqueAgua)
     
     botonTierra.addEventListener('click', ataqueTierra)
-
+    
     ocultarAtaque.style.display = 'none'
 
     ocultarReinicio.style.display = 'none'
@@ -46,7 +100,7 @@ function iniciarjuego() {
 }
 
 function selecionMascota() {
-    if (hipodege.checked == true) {
+    if (hipodoge.checked == true) {
         ocultarMascota.style.display = 'none'
 
         ocultarAtaque.style.display = 'block'
@@ -77,7 +131,7 @@ function selecionMascota() {
 function mascotaEnemigoSelecionar() {
     let mascotaAleatoria = aletorio(1,3)
     if (mascotaAleatoria == 1) {
-        mascotaEnemigo.innerHTML = 'EL Hipodege'
+        mascotaEnemigo.innerHTML = 'EL Hipodoge'
         imagenMascotaJugador.setAttribute("src", "https://simp6.jpg.church/images/Criatura1ef2057ad22a11bf7.png");
     } else if (mascotaAleatoria == 2) {
         mascotaEnemigo.innerHTML = 'EL Capipepo'
