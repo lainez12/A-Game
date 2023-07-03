@@ -140,6 +140,7 @@ label.seleccionado {
     display: grid;
     grid-template-columns: 250px 250px;
     place-content: center;
+    margin-top: 25px;
 }
 
 #campoBatalla div {
@@ -156,4 +157,33 @@ label.seleccionado {
 #sectionAtaque {
     position: relative;
     bottom: -70px;
+}
+
+#mensajeFinal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+#ganadorMensaje {
+    font-size: 40px;
+    color: rgb(181, 33, 33);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+#boton-reiniciar {
+    width: 100px;
+    height: 45px;
+    border: none;
+    background-color: rgb(251, 100, 58);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 25px;
+    border-radius: 25px;
 }

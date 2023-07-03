@@ -17,7 +17,7 @@ body {
 
 #titulo {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 70px;
+    font-size: 50px;
     color: rgba(255, 255, 255, 0.701);
 }
 
@@ -30,7 +30,7 @@ body {
     background-color: #25cbaad6;
     margin-top: 20px;
     border-radius: 20px;
-    width: 400px;
+    width: 90%;
     text-align: center;
     border: 1px solid white;
     box-shadow: 0px 0px 30px 1px rgb(88 16 229 / 42%);
@@ -49,6 +49,11 @@ body {
     color: white;
 }
 
+#selecionar-ataque {
+    width: 90%;
+    height: 75%;
+}
+
 #selecionar-mascota .mascota:hover,
 .mascota label:hover,
 button:hover {
@@ -62,4 +67,31 @@ button:hover {
 
 .mascotaImg img {
     width: 100%;
+}
+
+#lasMascotas {
+    flex-direction: column;
+}
+
+#botones-ataques {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.botonesAtaque {
+    width: 95px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#tu img, #enemigo img {
+    width: 135px;
+    height: 130px;
+}
+
+#campoBatalla {
+    grid-template-columns: 160px 160px;
 }

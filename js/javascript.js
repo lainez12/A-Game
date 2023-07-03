@@ -16,6 +16,8 @@ const imagenMascotaJugador = document.getElementById('imgEnemigo')
 const spanVidasJugador = document.getElementById('vidas-jugador')
 const spanVidasEnemigo = document.getElementById('vidas-enemigo')
 const resultadoBatalla = document.getElementById('resultados')
+const ganadorMensaje = document.getElementById('ganadorMensaje')
+const mensajeFinalStyles = document.getElementById('mensajeFinal')
 const tuAtaque = document.getElementById('name-Ataque-Jugador')
 const elAtaqueEnemigo = document.getElementById('name-Ataque-Enemigo')
 
@@ -208,12 +210,13 @@ function mensajeJuego(resultado) {
 }
 
 function mensajeFinal(mensaje) {
-    resultadoBatalla.innerHTML = mensaje
+    ganadorMensaje.innerHTML = mensaje
     tuAtaque.innerHTML = ' '
     elAtaqueEnemigo.innerHTML = ' '
     botonFuego.disabled = true
     botonAgua.disabled = true
     botonTierra.disabled = true
+    mensajeFinalStyles.setAttribute("style", "backdrop-filter: blur(5px); background-color:#7969698f; width: 100% ")
 }
 
 function reiniciarJuego() {
@@ -243,19 +246,19 @@ function aletorio(min, max) {
 function funcionesExtas() {
     var radios = document.querySelectorAll('.miAnimal');
 
-radios.forEach(function(radio) {
-  var input = radio.querySelector('input[type="radio"]');
-  
-  input.addEventListener('change', function() {
     radios.forEach(function(radio) {
-      radio.classList.remove('seleccionado');
-    });
+      var input = radio.querySelector('input[type="radio"]');
     
-    if (input.checked) {
-      radio.classList.add('seleccionado');
-    }
-  });
-});
+      input.addEventListener('change', function() {
+        radios.forEach(function(radio) {
+          radio.classList.remove('seleccionado');
+        });
+
+        if (input.checked) {
+          radio.classList.add('seleccionado');
+        }
+      });
+    });
 
 }
 
