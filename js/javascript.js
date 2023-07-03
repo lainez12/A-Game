@@ -5,10 +5,6 @@ const botonTierra = document.getElementById('boton-tierra')
 const ocultarAtaque = document.getElementById('selecionar-ataque')
 const ocultarReinicio = document.getElementById('reinicio')
 const botonReiniciar = document.getElementById('boton-reiniciar')
-
-const hipodoge = document.getElementById('hipodoge')
-const capipepo = document.getElementById('capipepo')
-const ratigueya = document.getElementById('ratigueya')
 const mascotaSelecionada = document.getElementById('mascota-selecionada')
 const imagenMascota = document.getElementById('imgAnimal')
 
@@ -28,6 +24,9 @@ const lasMascotas = document.getElementById('lasMascotas')
 let ataqueJugador
 let ataqueRival
 let cadaAnimal
+let hipodoge
+let capipepo
+let ratigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -75,11 +74,14 @@ function iniciarjuego() {
                         <img src=${animal.foto} alt=${animal.nombre}>
                     </figure>
                     ${animal.nombre}
-                    <input type="radio" name="mascota" id=${animal.nombre}>
+                    <input type="radio" name="mascota" id=${animal.nombre} />
                 </label>
         </div>
         `
         lasMascotas.innerHTML += cadaAnimal
+        hipodoge = document.getElementById('Hipodoge')
+        capipepo = document.getElementById('Capipepo')
+        ratigueya = document.getElementById('Ratigueya')
     })
 
     
