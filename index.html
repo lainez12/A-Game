@@ -13,62 +13,42 @@
     <section id="selecionar-mascota">
         <h2>Elige tu animal:</h2>
         <div id="lasMascotas">
-            <!-- <div class="mascota">
-                <label for="hipodoge" class="miAnimal">
-                    <figure class="mascotaImg">
-                        <img src="https://simp6.jpg.church/images/Criatura1ef2057ad22a11bf7.png" alt="Hipodoge">
-                    </figure>
-                    Hipodoge
-                    <input type="radio" name="mascota" id="hipodoge">
-                </label>
-            </div>
-            <div class="mascota">
-                <label for="capipepo" class="miAnimal">
-                    <figure class="mascotaImg">
-                        <img src="https://simp6.jpg.church/images/Criatura2b21aadb89e39dc36.png" alt="Capipepo">
-                    </figure>
-                    Capipepo
-                    <input type="radio" name="mascota" id="capipepo">
-                </label>
-            </div>
-            <div class="mascota">
-                <label for="ratigueya" class="miAnimal">
-                    <figure class="mascotaImg">
-                        <img src="https://simp6.jpg.church/images/Criatura38867b5557f90ae32.png" alt="Ratigueya">
-                    </figure>
-                    Ratigueya
-                    <input type="radio" name="mascota" id="ratigueya">
-                </label>
-            </div> -->
         </div>
-        <!-- <input type="radio" name="mascota" id=""> -->
         <button id="boton-mascota">Elegir</button>
+    </section>
+    <section id="ver-mapa"> 
+        <canvas id="mapa"></canvas>
+        <div>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
+        </div>
+        <h2 class="subtitulo">Recorre el mapa con tu mokepon</h2>
     </section>
     <section id="selecionar-ataque">
         <div id="campoBatalla">
             <div id="tu">
                 <img id="imgAnimal" alt="animalSelecionado">
                 <span id="mascota-selecionada">mascota</span>
-                <span id="vidas-jugador">3 ❤️❤️❤️</span>
-                <p id="name-Ataque-Jugador"></p>
                 <p id="consejoJugador">Escoge sabiamente</p>
             </div>
             <div id="enemigo">
                 <img id="imgEnemigo" alt="animalEnemigo">
                 <span id="mascota-enemigo">La mascota</span>
-                <span id="vidas-enemigo">3 ❤️❤️❤️</span>
-                <p id="name-Ataque-Enemigo"></p>
                 <p id="resultados">Sin resultado aun</p>
             </div>
         </div>
         <div id="sectionAtaque">
-            <h2>Seleciona tu ataque</h2>
+            <h2>Seleciona tu secuencia de ataques</h2>
             <div id="botones-ataques">
-                <button id="boton-fuego" class="botonesAtaque">Batazo 🏏️</button>
-                <button id="boton-agua" class="botonesAtaque">Escobazo 🧹️</button>
-                <button id="boton-tierra" class="botonesAtaque">Covid 🦠️</button>
+            </div>
+            <div id="actionsButtons">
+                <button id="reselectionAtaque">Reselection</button>
+                <button id="ataquesSelecionados">Atacar</button>
             </div>
         </div>
+        
         <div id="mensajeFinal">
             <p id="ganadorMensaje"></p>
             <section id="reinicio">
@@ -76,6 +56,9 @@
             </section>
         </div>
     </section>
-    <script src="./js/javascript.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <!-- <script type="module" src="./js/Animal.js"></script>
+    <script type="module" src="./js/juego.js"></script>
+    <script type="module" src="./js/styles.js"></script> -->
 </body>
 </html>

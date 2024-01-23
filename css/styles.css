@@ -38,7 +38,7 @@ body {
     font-family: monospace;
 }
 
-#boton-mascota {
+#boton-mascota{
     width: 40%;
     height: 45px;
     font-family: monospace;
@@ -49,8 +49,11 @@ body {
     color: white;
 }
 
+
+
 #selecionar-ataque {
     width: 90%;
+    display: none;
     height: 75%;
 }
 

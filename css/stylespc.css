@@ -109,6 +109,7 @@ label.seleccionado {
     color: white;
     font-family: monospace;
     height: 55%;
+    display: none;
     background-color: #25cbaad6;
     margin-top: 20px;
     border-radius: 20px;
@@ -163,10 +164,13 @@ label.seleccionado {
     position: absolute;
     left: 0;
     top: 0;
-    
+    display: none;
     height: 100%;
-    display: grid;
     place-content: center;
+}
+
+#ver-mapa {
+    display: none;
 }
 
 #ganadorMensaje {
@@ -186,4 +190,22 @@ label.seleccionado {
     font-size: 18px;
     margin-top: 25px;
     border-radius: 25px;
+}
+
+#reselectionAtaque,
+#ataquesSelecionados {
+    width: 20%;
+    height: 35px;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgb(98, 235, 0);
+    color: white;
+}
+
+#actionsButtons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
