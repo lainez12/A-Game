@@ -1,64 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de papel piedra y tijera!!</title>
-    <link rel="stylesheet" href="./css/stylespc.css">
-    <link rel="stylesheet" href="./css/styles.css" media="screen and (max-width: 600px)">
-</head>
-<body>
-    <h1 id="titulo">Mokepones</h1>
-    <section id="selecionar-mascota">
-        <h2>Elige tu animal:</h2>
-        <div id="lasMascotas">
-        </div>
-        <button id="boton-mascota">Elegir</button>
-    </section>
-    <section id="ver-mapa"> 
-        <canvas id="mapa"></canvas>
-        <div>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Arriba</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Izquierda</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Abajo</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Derecha</button>
-        </div>
-        <h2 class="subtitulo">Recorre el mapa con tu mokepon</h2>
-    </section>
-    <section id="selecionar-ataque">
-        <div id="campoBatalla">
-            <div id="tu">
-                <img id="imgAnimal" alt="animalSelecionado">
-                <span id="mascota-selecionada">mascota</span>
-                <p id="consejoJugador">Escoge sabiamente</p>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>MOKEPON!</title>
+        <link rel="stylesheet" href="./styles.css"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section id="seleccionar-mascota">
+            <h1 class="titulo">Mokepon</h1> 
+
+            <h2 class="subtitulo">Choisissez votre Mokepon:</h2>
+
+            <div id='contenedorTarjetas' class="tarjetas">
+                
             </div>
-            <div id="enemigo">
-                <img id="imgEnemigo" alt="animalEnemigo">
-                <span id="mascota-enemigo">La mascota</span>
-                <p id="resultados">Sin resultado aun</p>
+
+            <button id="boton-mascota">Sélectionner</button>
+        </section>
+
+        <section id="ver-mapa">
+            <h2 class="subtitulo">Parcourez la carte avec votre mokepon</h2> 
+            <canvas id="mapa"></canvas>
+            <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">Haut</button>
+            <div>
+                <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">Gauche</button>
+                <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">Bas</button>
+                <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">Droite</button>
             </div>
-        </div>
-        <div id="sectionAtaque">
-            <h2>Seleciona tu secuencia de ataques</h2>
-            <div id="botones-ataques">
+        </section>
+
+        <section id="seleccionar-ataque">
+            <h1 class="titulo">Mokepon</h1>
+
+            <h2 class="subtitulo">Choisissez votre attaque:</h2>
+
+            <div id='contenedorAtaques' class="tarjetas-ataques">
+
             </div>
-            <div id="actionsButtons">
-                <button id="reselectionAtaque">Reselection</button>
-                <button id="ataquesSelecionados">Atacar</button>
+
+            <div id="mensajes">
+                <p id="resultado">Bonne chance</p>
+
+                <section id="reiniciar">
+                    <button id="boton-reiniciar">Recommencer</button>
+                </section>
             </div>
-        </div>
-        
-        <div id="mensajeFinal">
-            <p id="ganadorMensaje"></p>
-            <section id="reinicio">
-                <button id="boton-reiniciar">Reiniciar</button>
-            </section>
-        </div>
-    </section>
-    <script type="module" src="./js/main.js"></script>
-    <!-- <script type="module" src="./js/Animal.js"></script>
-    <script type="module" src="./js/juego.js"></script>
-    <script type="module" src="./js/styles.js"></script> -->
-</body>
+
+            <div class="ataques">
+                <div class="ataques-jugador">
+                    <p id="vidas-jugador">0</p>
+                    <p id="mascota-jugador"></p>
+                    <div id="ataques-del-jugador"></div>
+                </div>
+                <div class="ataques-enemigo">   
+                    <p id="vidas-enemigo">0</p>
+                    <p id="mascota-enemigo"></p>
+                    <div id="ataques-del-enemigo"></div>
+                </div>
+            </div>
+        </section>
+        <script src="/js/central.js"></script>
+    </body>
 </html>

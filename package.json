@@ -1,22 +1,15 @@
 {
-  "name": "a-game",
+  "name": "mokepon",
   "version": "1.0.0",
-  "description": "A test of this game",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lainez12/A-Game.git"
-  },
-  "author": "will_Lainez",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lainez12/A-Game/issues"
-  },
-  "homepage": "https://github.com/lainez12/A-Game#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
   }
 }
